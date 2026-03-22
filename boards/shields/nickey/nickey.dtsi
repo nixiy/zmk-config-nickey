@@ -1,13 +1,8 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include <input/processors.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
-#include <physical_layouts.dtsi>
 
 / {
-    chosen {
-        zmk,physical-layout = &physical_layout0;
-    };
-
     default_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         columns = <12>;

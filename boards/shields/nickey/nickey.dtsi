@@ -5,13 +5,12 @@
 / {
     chosen {
         zmk,physical-layout = &physical_layout0;
-        /* zmk,kscan や zmk,matrix-transform はここには書かず、下のレイアウト内に書きます */
     };
 
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
-        transform = <&default_transform>; /* あなたのファイルにあるtransformのラベル名 */
+        transform = <&default_transform>;
         kscan = <&kscan0>;                /* あなたのファイルにあるkscanのラベル名 */
     };
 

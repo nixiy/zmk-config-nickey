@@ -80,10 +80,10 @@
 
         layer_1 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                &trans  &trans  &trans    &trans  &trans  &trans
+&kp ESCAPE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                    &kp NUMBER_6      &kp N7                &kp N8                 &kp N9             &kp N0  &trans
+&trans      &trans        &trans        &trans        &trans        &trans                          &kp LEFT          &kp DOWN              &kp UP                 &kp RIGHT          &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans        &trans    &trans  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &trans  &trans
+                                                      &trans        &trans        &trans    &trans  &trans            &trans
             >;
         };
 

@@ -31,7 +31,7 @@
     pinctrl-names = "default", "sleep";
 
     pointing_device: pointing_device@57 {
-        compatible = "sekigon,lpps";
+        compatible = "lpps";
         reg = <0x57>;
         irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
     };
@@ -43,6 +43,7 @@
         device = <&pointing_device>;
     };
 };
+
 &kscan0 {
         col-gpios
             = <&xiao_d 0 GPIO_ACTIVE_HIGH>

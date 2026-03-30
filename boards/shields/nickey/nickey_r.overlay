@@ -49,6 +49,6 @@
         status = "okay";
         compatible = "lpps";
         reg = <0x57>;
-        irq-gpios = <&gpio0 2 GPIO_PULL_UP>;
+        irq-gpios = <&gpio0 28 GPIO_PULL_UP>;
     };
 };

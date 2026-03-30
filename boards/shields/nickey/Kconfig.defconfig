@@ -21,6 +21,12 @@ config SPI
 config PMW3610
     default y
 
+config I2C
+    default y
+
+config LPPS
+    default y
+
 endif
 
 if SHIELD_NICKEY_R || SHIELD_NICKEY_L

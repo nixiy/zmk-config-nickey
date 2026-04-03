@@ -7,17 +7,10 @@
     col-offset = <6>;
 };
 
-&kscan0 {
-        col-gpios
-            = <&xiao_d 1 GPIO_ACTIVE_HIGH>
-            ;
-};
-
 / {
-    pointing_listener {
+    pointing_listener: pointing_listener {
         compatible = "zmk,input-listener";
         device = <&pointing_device>;
-        status = "okay";
     };
 };
 
@@ -26,6 +19,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
                     <NRF_PSEL(TWIM_SCL, 0, 5)>;
+            bias-pull-up;
         };
     };
 
@@ -33,6 +27,7 @@
         group1 {
             psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
                     <NRF_PSEL(TWIM_SCL, 0, 5)>;
+            bias-pull-up;
             low-power-enable;
         };
     };

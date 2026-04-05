@@ -96,6 +96,17 @@
             //<&zip_temp_layer 1 500>;                            //オートマウスレイヤーの選択
     };
 
+    //right hand trackball
+    pointing_stick_ext_listener: pointing_stick_ext_listener {
+        compatible = "zmk,input-listener";
+        status = "disabled";
+        input-processors = 
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>;         //Y軸反転
+            //<&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,        //X軸とY軸の入れ替え
+            //<&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,       //X軸反転
+            //<&zip_temp_layer 1 500>;                            //オートマウスレイヤーの選択
+    };
+
     left_encoder: encoder_left {
         compatible = "alps,ec11";
         a-gpios = <&xiao_d 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;

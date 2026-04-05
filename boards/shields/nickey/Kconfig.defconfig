@@ -37,4 +37,7 @@ config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
 config RGBLED_WIDGET_BATTERY_LEVEL_CRITICAL
     default 10
 
+config LPPS
+    default y
+
 endif

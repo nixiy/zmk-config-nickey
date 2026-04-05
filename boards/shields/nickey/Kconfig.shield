@@ -1,0 +1,5 @@
+config SHIELD_NICKEY_R
+    def_bool $(shields_list_contains,nickey_r)
+
+config SHIELD_NICKEY_L
+    def_bool $(shields_list_contains,nickey_l)

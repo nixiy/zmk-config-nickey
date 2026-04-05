@@ -1,7 +1,6 @@
 #include "nickey.dtsi"
 #include <input/processors.dtsi>
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <dt-bindings/zmk/input-transform.h>
 
 &default_transform {
     col-offset = <6>;

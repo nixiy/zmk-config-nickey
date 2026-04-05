@@ -6,9 +6,13 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 100
+#define MOUSE 5
+#define SCROLL 6
+
 &mt {
     flavor = "balanced";
-    quick-tap-ms = <0>;
+    quick-tap-ms = <150>;
 };
 
 &lt {
@@ -21,13 +25,43 @@
         compatible = "zmk,combos";
 
         layer4_ESC {
-            bindings = <&lt 4 ESC>;
-            key-positions = <39 38>;
+            bindings = <&lt 3 ESC>;
+            key-positions = <0 1>;
         };
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <11 12>;
+            key-positions = <1 2>;
+        };
+
+        semicolon {
+            bindings = <&kp SEMI>;
+            key-positions = <19 20>;
+        };
+
+        quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <8 9>;
+        };
+
+        rctrl {
+            bindings = <&kp LANG1>;
+            key-positions = <17 18>;
+        };
+
+        lctrl {
+            bindings = <&kp RCTRL>;
+            key-positions = <13 12>;
+        };
+
+        lshift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <24 23>;
+        };
+
+        rshift {
+            bindings = <&kp LANG2>;
+            key-positions = <29 30>;
         };
     };
 
@@ -72,37 +106,54 @@
 
         default_layer {
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T                           &kp Y    &kp U     &kp I      &kp O    &kp P     &kp SQT
-&kp LCTRL  &kp A  &kp S  &kp D  &kp F  &kp G                           &kp H    &kp J     &kp K      &kp L    &kp SEMI  &kp MINUS
-&kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B  &mo 3        &kp DELETE  &kp N    &kp M     &kp COMMA  &kp DOT  &kp FSLH  &kp EQUAL
-                                &mo 2  &mo 1  &kp SPACE    &kp BSPC    &kp RET  &kp RALT
+&kp Q     &kp W         &kp E           &kp R  &kp T                                                &kp Y      &kp U  &kp I                   &kp O            &kp P
+&kp A     &kp S         &kp D           &kp F  &kp G                     &kp RCTRL                  &kp H      &kp J  &kp K                   &kp L            &mt SEMI MINUS
+&kp Z     &kp X         &kp C           &kp V  &kp B  &kp LCTRL          &kp RIGHT_SHIFT            &kp N      &kp M  &mt SINGLE_QUOTE COMMA  &mt SEMI PERIOD  &mt SLASH EQUAL
+&kp LWIN  &kp LEFT_ALT  &kp LEFT_SHIFT  &mo 2  &mo 1  &mt LCTRL SPACE    &mt RIGHT_SHIFT BACKSPACE  &kp ENTER                                                  &kp SPACE
             >;
+
+            sensor-bindings = <&scroll_right_left>;
         };
 
-        layer_1 {
+        number {
             bindings = <
-&kp ESCAPE  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                        &kp NUMBER_6      &kp N7                &kp N8                 &kp N9             &kp N0         &kp GRAVE
-&trans      &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                              &kp LEFT          &kp DOWN              &kp UP                 &kp RIGHT          &trans         &kp TILDE
-&trans      &kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans    &trans      &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &kp BACKSLASH  &trans
-                                                      &trans        &trans        &trans    &kp DELETE  &trans            &trans
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5                                       &kp NUMBER_6      &kp NUMBER_7          &kp NUMBER_8           &kp NUMBER_9       &kp NUMBER_0
+&kp F1        &kp F2        &kp F3        &kp F4        &kp F5                     &trans                  &trans            &mkp LCLK             &mkp RCLK              &mkp MCLK          &trans
+&kp F6        &kp F7        &kp F8        &kp F9        &kp F10       &trans       &trans                  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET  &trans
+&trans        &trans        &trans        &trans        &trans        &kp LCTRL    &mt RIGHT_SHIFT DELETE  &trans                                                                            &trans
             >;
+
+            sensor-bindings = <&scroll_right_left>;
         };
 
-        layer_2 {
+        symbol {
             bindings = <
-&trans  &trans  &trans     &trans      &trans  &trans                    &kp QUESTION   &trans  &trans  &trans  &kp PERCENT  &trans
-&trans  &kp AT  &kp HASH   &kp DOLLAR  &trans  &trans                    &kp EXCL       &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &kp ASTRK  &kp CARET   &trans  &trans  &trans    &trans  &kp AMPERSAND  &trans  &trans  &trans  &trans       &trans
-                                       &trans  &trans  &trans    &trans  &trans         &trans
+&trans          &trans     &trans      &trans  &trans                                      &trans         &kp EXCL  &kp QUESTION  &trans     &kp PERCENT
+&kp AT          &kp HASH   &kp DOLLAR  &trans  &trans                      &mkp MB4        &kp LEFT       &kp DOWN  &kp UP_ARROW  &kp RIGHT  &kp TILDE
+&kp LEFT_SHIFT  &kp ASTRK  &kp CARET   &trans  &kp BACKSLASH  &trans       &mkp MB5        &kp AMPERSAND  &trans    &trans        &trans     &trans
+&trans          &trans     &trans      &trans  &trans         &kp LCTRL    &kp LEFT_SHIFT  &trans                                            &trans
             >;
+
+            sensor-bindings = <&scroll_up_down>;
         };
 
-        layer_3 {
+        bt {
             bindings = <
-&bt BT_CLR      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                    &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR_ALL  &trans        &trans        &trans        &trans        &trans                          &trans  &trans  &trans  &trans  &trans  &trans
-&trans          &trans        &trans        &trans        &trans        &trans        &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
-                                                          &trans        &trans        &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans            &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans    &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+
+            sensor-bindings = <&scroll_up_down>;
+        };
+
+        layer_4 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans                          &trans
             >;
         };
     };

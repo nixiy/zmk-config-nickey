@@ -2,8 +2,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: nickey
-      url-base: https://github.com/nickey
+    - name: nixiy
+      url-base: https://github.com/nixiy
     - name: badjeff    # <-- PMW3610
       url-base: https://github.com/badjeff
     # - name: sekigon-gonnoc  # <-- PAW3222

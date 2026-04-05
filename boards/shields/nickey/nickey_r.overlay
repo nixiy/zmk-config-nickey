@@ -124,8 +124,7 @@
         status = "okay";
         compatible = "lpps";
         reg = <0x57>;
-        irq-gpios = <&gpio0 31 GPIO_PULL_UP>;
-        power-gpios = <&gpio0 24 (GPIO_ACTIVE_HIGH | NRF_GPIO_DRIVE_H1)>;
+        irq-gpios = <&gpio0 9 GPIO_PULL_UP>;
     };
 };
 

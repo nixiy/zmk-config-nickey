@@ -44,7 +44,7 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 3 GPIO_ACTIVE_LOW>;  //P0.09を指定(CS)
+    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  //P0.09を指定(CS)
 
     trackball_central: trackball_central@0 {
         status = "okay";

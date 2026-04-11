@@ -12,6 +12,10 @@
 
 左側のボトムプレートです。
 
+## NickeyR_bottom.stl
+
+右側のボトムプレートです。
+
 ## xiaocover.stp
 
 XiaoBLEのカバーです。リセットスイッチの棒も同一モデルに含まれているのでBambuStudioの分割を実施すると別々に印刷できます。

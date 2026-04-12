@@ -21,7 +21,7 @@
         compatible = "zmk,input-listener";
         device = <&trackpad>;
         input-processors = <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-                            &zip_scroll_scaler 70 70>;
+                            &zip_scroll_scaler 40 40>;
     };
 };
 

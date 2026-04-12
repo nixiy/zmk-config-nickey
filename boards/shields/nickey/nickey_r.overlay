@@ -17,72 +17,48 @@
             ;
 };
 
+/ {
+    trackpad_ext_listener: trackpad_ext_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackpad>;
+    };
+};
+
 
 &pinctrl {
-    spi0_default: spi0_default {    //通常時(SPI通信中)のピン構成
+    i2c0_default: i2c0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>, //P0.05を指定(SCLK)
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,    //P0.04を指定(SDIOだからMOSI,MISO両方の役割を担う)
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 5)>;
+            bias-pull-up;
         };
     };
 
-    spi0_sleep: spi0_sleep {    //スリープ時のピン構成(省電力)
+    i2c0_sleep: i2c0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            psels = <NRF_PSEL(TWIM_SDA, 0, 4)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 5)>;
+            bias-pull-up;
             low-power-enable;
         };
     };
 };
 
-
-&spi0 {
+&i2c0 {
     status = "okay";
-    compatible = "nordic,nrf-spim"; //マイコンがnRFシリーズ
-    pinctrl-0 = <&spi0_default>;
-    pinctrl-1 = <&spi0_sleep>;
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio0 9 GPIO_ACTIVE_LOW>;  //P0.09を指定(CS)
+    clock-frequency = <I2C_BITRATE_FAST>;
+    zephyr,concat-buf-size = <32>;
 
-    trackball_central: trackball_central@0 {
+    trackpad: trackpad@56 {
         status = "okay";
-        compatible = "pixart,pmw3610";  //トラボセンサ用のドライバとバインド
-        reg = <0>;
-        spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; //P0.02を指定(MOTION)
-        cpi = <550>;
-        //swap-xy;
-        //invert-x; //COROPIT版ではコメントアウトを外す
-        //invert-y; //COROPIT版ではコメントアウトを外す
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        compatible = "azoteq,iqs7211e";
+        reg = <0x56>;
+        irq-gpios = <&gpio0 2 GPIO_PULL_UP>;
+        scroller-mode;
+        // v-invert;
     };
-};
-
-
-// Overrides for the input listener node
-&trackball_central_listener {
-    status = "okay";
-    device = <&trackball_central>;
-
-    snipe {
-        layers = <1>;
-        input-processors =
-            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, // Y軸反転
-            <&zip_xy_scaler 1 2>;                         // CPI を L/R にする
-    };
-
-    scroller {
-        layers = <2>;
-        input-processors = 
-            // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,   //X軸とY軸の入れ替え
-            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,     //X軸反転
-            <&zip_xy_to_scroll_mapper>,                       //スクロールモードに変更
-            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>, //スクロールのX軸反転
-            <&zip_scroll_scaler 1 50>;                        //スクロール量を左/右に
-    };
-
 };

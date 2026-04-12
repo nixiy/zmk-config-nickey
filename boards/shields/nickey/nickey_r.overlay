@@ -57,7 +57,7 @@
         status = "okay";
         compatible = "azoteq,iqs7211e";
         reg = <0x56>;
-        irq-gpios = <&gpio0 9 GPIO_PULL_UP>;
+        irq-gpios = <&gpio1 11 GPIO_PULL_UP>;
         // scroller-mode;
         // v-invert;
         wakeup-source; //スリープ状態からの復帰に利用

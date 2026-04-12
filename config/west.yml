@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/nixiy
     - name: badjeff    # <-- PMW3610
       url-base: https://github.com/badjeff
-    # - name: sekigon-gonnoc  # <-- PAW3222
-    #   url-base: https://github.com/sekigon-gonnoc
+    - name: sekigon-gonnoc
+      url-base: https://github.com/sekigon-gonnoc
     - name: caksoylar  # <-- RGB LED
       url-base: https://github.com/caksoylar
     - name: zettaface  # <-- Input Processor Keybind
@@ -29,5 +29,7 @@ manifest:
     - name: zmk-input-processor-keybind
       remote: zettaface
       revision: main
+    - name: zmk-driver-iqs7211e
+      remote: sekigon-gonnoc
   self:
     path: config

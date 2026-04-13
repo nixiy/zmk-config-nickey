@@ -1,25 +1,42 @@
 # ケースモデル
 
-## NickeyLtop.stl
+手元のBambu Lab P1Sの0.4mmノズル, 0.12mmピッチ での確認は出来ています。
 
-左型のトッププレートです。
+## トッププレート
 
-## NickeyRtop.stl
+- NickeyLtop.stl
+- NickeyRtop.stl
 
-右側のトッププレートです。
 
-## NickeyL_bottom.stl
+## ボトムプレート
 
-左側のボトムプレートです。
-
-## NickeyR_bottom.stl
+- NickeyL_bottom.stl
+- NickeyR_bottom.stl
 
 右側のボトムプレートです。
 
-## xiaoCover.stl
+## マイコンカバー
+
+- xiaoCover.stl
 
 XiaoBLEのカバーです。リセットスイッチの棒も同一モデルに含まれているのでBambuStudioの分割を実施すると別々に印刷できます。
 
-## powerswitch.stl
+## 電源スイッチ
 
-nickeyの電源スイッチカバーです。
+- powerswitch.stl
+
+## トッププレート(option)
+
+- NickeyLtopAAA
+- NickeyRtopAAA
+
+単4電池Modをしたい人はご活用下さい。
+
+# 注意事項
+
+- 本モデルは個人利用のみを目的としています
+- 商用利用（販売・配布・利益目的の使用）は一切禁止です
+- 3Dプリント品の組み立て・使用中に発生したトラブル・故障・事故等について、作者は一切の責任を負いません
+- サポート・修理・交換・補償等の対応は致しかねます
+- 印刷・組み立ては自己責任でお願いします
+- 改変データの配布はOKです（改変元が本モデルであることを明記してください）

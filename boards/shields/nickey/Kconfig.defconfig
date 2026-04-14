@@ -21,6 +21,9 @@ config SPI
 config PMW3610
     default y
 
+config IQS7211E
+    default y
+
 endif
 
 if SHIELD_NICKEY_R || SHIELD_NICKEY_L

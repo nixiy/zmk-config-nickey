@@ -1,3 +1,3 @@
 # zmk-config-nickey
 
-zmk-config-nickey
+<img src="keymap-drawer/nickey.svg">

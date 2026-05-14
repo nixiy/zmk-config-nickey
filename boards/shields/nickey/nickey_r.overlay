@@ -16,50 +16,62 @@
             ;
 };
 
-/ {
-    trackpad_listener: trackpad_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackpad>;
-        input-processors = <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT
-                            &zip_scroll_scaler 40 40>;
-    };
-};
-
 
 &pinctrl {
-    i2c0_default: i2c0_default {
+    spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
-                    <NRF_PSEL(TWIM_SCL, 1, 11)>;
-            bias-pull-up;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 9)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 10)>,
+                <NRF_PSEL(SPIM_MISO, 0, 10)>;
         };
     };
 
-    i2c0_sleep: i2c0_sleep {
+    spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(TWIM_SDA, 0, 10)>,
-                    <NRF_PSEL(TWIM_SCL, 1, 11)>;
-            bias-pull-up;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 9)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 10)>,
+                <NRF_PSEL(SPIM_MISO, 0, 10)>;
+            low-power-enable;
         };
     };
 };
 
-&i2c0 {
+&spi0 {
     status = "okay";
-    compatible = "nordic,nrf-twim";
-    pinctrl-0 = <&i2c0_default>;
-    pinctrl-1 = <&i2c0_sleep>;
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi0_default>;
+    pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    clock-frequency = <I2C_BITRATE_FAST>;
-    zephyr,concat-buf-size = <32>;
 
-    trackpad: trackpad@56 {
+    trackball_central: trackball_central@0 {
         status = "okay";
-        compatible = "azoteq,iqs7211e";
-        reg = <0x56>;
-        irq-gpios = <&gpio0 9 GPIO_PULL_UP>;
-        power-gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
-        // scroller-mode;
-        //v-invert;
+        compatible = "pixart,paw3222";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
     };
+};
+
+// Overrides for the input listener node
+&trackball_central_listener {
+    status = "okay";
+    device = <&trackball_central>;
+
+    snipe {
+        layers = <1>;
+        input-processors =
+            <&zip_xy_transform INPUT_TRANSFORM_Y_INVERT>, // Y軸反転
+            <&zip_xy_scaler 1 2>;                         // CPI を L/R にする
+    };
+
+    scroller {
+        layers = <2>;
+        input-processors = 
+            // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,   //X軸とY軸の入れ替え
+            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,     //X軸反転
+            <&zip_xy_to_scroll_mapper>,                       //スクロールモードに変更
+            <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>, //スクロールのX軸反転
+            <&zip_scroll_scaler 1 50>;                        //スクロール量を左/右に
+    };
+
 };

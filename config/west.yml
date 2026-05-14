@@ -4,8 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: nixiy
       url-base: https://github.com/nixiy
-    - name: badjeff    # <-- PMW3610
-      url-base: https://github.com/badjeff
+    # - name: badjeff    # <-- PMW3610
+    #   url-base: https://github.com/badjeff
     - name: sekigon-gonnoc
       url-base: https://github.com/sekigon-gonnoc
     - name: caksoylar  # <-- RGB LED
@@ -17,12 +17,12 @@ manifest:
       remote: zmkfirmware
       revision: v0.3.0
       import: app/west.yml
-    - name: zmk-pmw3610-driver
-      remote: badjeff
-      revision: zmk-0.3
-    # - name: zmk-driver-paw3222
-    #   remote: sekigon-gonnoc
-    #   revision: main
+    # - name: zmk-pmw3610-driver
+    #   remote: badjeff
+    #   revision: zmk-0.3
+    - name: zmk-driver-paw3222
+      remote: sekigon-gonnoc
+      revision: main
     - name: zmk-rgbled-widget
       remote: caksoylar
       revision: v0.3

@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/caksoylar
     - name: zettaface  # <-- Input Processor Keybind
       url-base: https://github.com/zettaface
+    - name: kzyz
+      url-base: https://github.com/kzyz
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -31,5 +33,8 @@ manifest:
       revision: main
     - name: zmk-driver-iqs7211e
       remote: sekigon-gonnoc
+    - name: zmk_az1uball_driver
+      remote: kzyz
+      revision: main
   self:
     path: config

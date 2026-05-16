@@ -21,6 +21,9 @@ config PAW3222
 config SPI
     default y
 
+config AZ1UBALL
+    default y
+
 endif
 
 if SHIELD_NICKEY_R || SHIELD_NICKEY_L

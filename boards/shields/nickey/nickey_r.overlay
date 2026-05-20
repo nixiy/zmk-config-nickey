@@ -57,6 +57,7 @@
 // Overrides for the input listener node
 &trackball_central_listener {
     status = "okay";
+    device = <&trackball_central>;
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
 
     snipe {

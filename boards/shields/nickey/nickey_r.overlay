@@ -57,7 +57,7 @@
 // Overrides for the input listener node
 &trackball_central_listener {
     status = "okay";
-    device = <&trackball_central>;
+    input-processors = <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT)>;
 
     snipe {
         layers = <1>;
@@ -70,7 +70,7 @@
         layers = <2>;
         input-processors = 
             // <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,   //X軸とY軸の入れ替え
-            <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,     //X軸反転
+            // <&zip_xy_transform INPUT_TRANSFORM_X_INVERT>,     //X軸反転
             <&zip_xy_to_scroll_mapper>,                       //スクロールモードに変更
             <&zip_scroll_transform INPUT_TRANSFORM_X_INVERT>, //スクロールのX軸反転
             <&zip_scroll_scaler 1 50>;                        //スクロール量を左/右に

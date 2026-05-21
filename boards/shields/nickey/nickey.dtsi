@@ -10,10 +10,9 @@
 
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
-        display-name = "default_layout";
-
-        kscan = <&kscan0>;
+        display-name = "Default Layout";
         transform = <&default_transform>;
+        kscan = <&kscan0>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>
@@ -72,7 +71,7 @@
                                             RC(3,2) RC(3,3) RC(3,4)     RC(3,7) RC(3,8) RC(3,9)
         >;
     };
-    
+
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";

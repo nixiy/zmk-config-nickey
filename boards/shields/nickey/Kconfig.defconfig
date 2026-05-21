@@ -18,9 +18,6 @@ config ZMK_POINTING
 config SPI
     default y
 
-config PAW3222
-    default y
-
 endif
 
 if SHIELD_NICKEY_R || SHIELD_NICKEY_L

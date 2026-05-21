@@ -20,11 +20,7 @@
 include:
   - board: seeeduino_xiao_ble
     shield: nickey_r rgbled_adapter
-    snippet: studio-rpc-usb-uart
   - board: seeeduino_xiao_ble
     shield: nickey_l rgbled_adapter
   - board: seeeduino_xiao_ble
     shield: settings_reset
-  - board: nice_nano_v2
-    shield: corne_left
-    snippet: zmk-usb-logging

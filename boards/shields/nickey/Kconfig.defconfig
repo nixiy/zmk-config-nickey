@@ -18,6 +18,9 @@ config ZMK_POINTING
 config SPI
     default y
 
+config ZMK_INPUT_AZ1BALL
+    default y
+
 endif
 
 if SHIELD_NICKEY_R || SHIELD_NICKEY_L

@@ -6,6 +6,10 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 1
+#define MOUSE 5
+#define SCROLL 6
+
 &mt {
     flavor = "balanced";
     quick-tap-ms = <0>;
@@ -78,9 +82,9 @@
 
         layer_2 {
             bindings = <
-&trans  &trans  &trans     &trans      &trans  &trans                    &kp QUESTION   &trans  &trans  &trans  &kp PERCENT  &trans
-&trans  &kp AT  &kp HASH   &kp DOLLAR  &trans  &trans                    &kp EXCL       &trans  &trans  &trans  &trans       &trans
-&trans  &trans  &kp ASTRK  &kp CARET   &trans  &trans  &trans    &trans  &kp AMPERSAND  &trans  &trans  &trans  &trans       &trans
+&trans  &trans  &trans     &trans      &trans  &trans                    &kp QUESTION   &trans     &trans     &trans  &kp PERCENT  &trans
+&trans  &kp AT  &kp HASH   &kp DOLLAR  &trans  &trans                    &kp EXCL       &mkp LCLK  &mkp RCLK  &trans  &trans       &trans
+&trans  &trans  &kp ASTRK  &kp CARET   &trans  &trans  &trans    &trans  &kp AMPERSAND  &mkp MCLK  &trans     &trans  &trans       &trans
                                        &trans  &trans  &trans    &trans  &trans         &trans
             >;
         };

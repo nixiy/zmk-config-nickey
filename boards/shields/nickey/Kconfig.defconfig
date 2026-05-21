@@ -1,7 +1,7 @@
 if SHIELD_NICKEY_R
 
 config ZMK_KEYBOARD_NAME
-    default "nickey44tb"
+    default "nickey44tp"
 
 config ZMK_BLE
     default y

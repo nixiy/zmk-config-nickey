@@ -34,7 +34,7 @@ layers:
   - F9
   - F10
   - '3'
-  - {t: ▽, type: trans}
+  - '&studio_unlock'
   - '['
   - (
   - )

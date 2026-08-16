@@ -50,6 +50,15 @@ manifest:
     - name: zmk-feature-input-stream
       remote: cormoran
       revision: main
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: codex/custom-rpc-rewrite
+    - name: zmk-feature-os-detection
+      remote: cormoran
+      revision: main
     # --- 外部モジュール群 ---
     - name: zmk-rgbled-widget
       remote: caksoylar

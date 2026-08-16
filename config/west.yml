@@ -41,6 +41,15 @@ manifest:
     - name: zmk-feature-fast-keymap
       remote: cormoran
       revision: main
+        - name: zmk-feature-runtime-macro
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-input-stream
+      remote: cormoran
+      revision: main
     # --- 外部モジュール群 ---
     - name: zmk-rgbled-widget
       remote: caksoylar

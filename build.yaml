@@ -21,7 +21,6 @@ include:
   - board: xiao_ble//zmk
     shield: nickey_r rgbled_adapter
     snippet: studio-rpc-usb-uart
-    cmake-args: -DCONFIG_ZMK_STUDIO=y
     artifact-name: nickey_r
 
   - board: xiao_ble//zmk

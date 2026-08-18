@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/cormoran
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: caksoylar
+      url-base: https://github.com/caksoylar
   projects:
     - name: zmk-west-commands
       remote: cormoran
@@ -81,4 +83,9 @@ manifest:
       revision: main
     - name: zmk-module-settings-rpc
       remote: cormoran
+      revision: main
+
+    - name: zmk-rgbled-widget
+      remote: caksoylar
+      # v0.3 support was split out to v0.3-branch; main now tracks ZMK main/Zephyr 4.x
       revision: main

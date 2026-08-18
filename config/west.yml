@@ -1,44 +1,62 @@
 manifest:
   remotes:
-    - name: caksoylar  # <-- RGB LED
+    - name: caksoylar
       url-base: https://github.com/caksoylar
     - name: cormoran
       url-base: https://github.com/cormoran
   projects:
     - name: zmk
       remote: cormoran
-      import:
-        file: app/west.yml
-      revision: main+dya
-    - name: zephyr
-      remote: cormoran
-      revision: v4.1.0+zmk-fixes+nrf-half-duplex-uart
-      clone-depth: 1
-      import:
-        name-blocklist:
-          - ci-tools
-          - hal_altera
-          - hal_cypress
-          - hal_infineon
-          - hal_microchip
-          - hal_nxp
-          - hal_openisa
-          - hal_xtensa
-          - hal_st
-          - hal_ti
-          - loramac-node
-          - mcuboot
-          - mcumgr
-          - net-tools
-          - openthread
-          - edtt
-          - trusted-firmware-m
-    - name: zmk-feature-custom-settings
-      remote: cormoran
-      revision: main
-    - name: zmk-feature-fast-keymap
-      remote: cormoran
-      revision: main
+      # main+dya branch @ 2026-07-25 (Zephyr v4.1.0+zmk-fixes)
+      revision: e5c9b6915b56801193e359dd9bad4a167ce0d1b8
+      import: app/west.yml
     - name: zmk-rgbled-widget
       remote: caksoylar
+      # v0.3 support was split out to v0.3-branch; main now tracks ZMK main/Zephyr 4.x
       revision: main
+
+    - name: zmk-module-ble-management
+      remote: cormoran
+      # main @ 2026-07-05 (zmk-v0.4.0.0 tag not published yet for this module)
+      revision: 57738cc4fc6ba80e82a7ac57741a0339cb186cd4
+    - name: zmk-module-battery-history
+      remote: cormoran
+      # main @ 2026-02-24 (no tags published for this module)
+      revision: 307755dd2ad4d320e14de162e8e5ef018f29d929
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      # main @ 2026-07-06 (zmk-v0.4.0.0 tag not published yet for this module)
+      revision: 78f86df9e6c5edaf57bef3ccbd7f360cfdf49291
+    - name: zmk-module-runtime-input-processor
+      remote: cormoran
+      revision: zmk-v0.4.0.0
+    - name: zmk-behavior-runtime-sensor-rotate
+      remote: cormoran
+      # main @ 2026-07-05 (zmk-v0.4.0.0 tag not published yet for this module)
+      revision: 8b1125ed676c1f5e14145d217984f33d0ebdcef4
+
+    - name: zmk-feature-device-info
+      remote: cormoran
+      revision: 8cedd2dd9f04e19ea5a17b94914dd47a09d8db11
+    - name: zmk-feature-runtime-combo
+      remote: cormoran
+      revision: d9490e7b5d41c516221d131241009e81740efcee
+      import: true
+    - name: zmk-feature-runtime-macro
+      remote: cormoran
+      revision: 38530962eb7061b60efcb98e84585cfb1f0cb6de
+      import: true
+    - name: zmk-feature-watchdog
+      remote: cormoran
+      revision: 84ad14c6c3645dc40b23f45d08ab45418655f912
+    - name: zmk-feature-kscan-diagnostics
+      remote: cormoran
+      revision: 1432f7fe0cfe903cd7d3c9931ae6bd6f2e1f328e
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: 92728246f80d327709839b2dbf5cf11880ff87e1
+    - name: zmk-feature-fast-keymap
+      remote: cormoran
+      revision: 8dac76de0ba38588ba39ca498910e24f8332bc6b
+  self:
+    path: config

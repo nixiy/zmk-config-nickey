@@ -79,3 +79,6 @@ manifest:
     - name: zmk-feature-kscan-diagnostics
       remote: cormoran
       revision: main
+    - name: zmk-module-settings-rpc
+      remote: cormoran
+      revision: main

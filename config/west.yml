@@ -55,3 +55,27 @@ manifest:
     - name: zmk-feature-module-physical-layout
       remote: cormoran
       revision: main
+    - name: zmk-module-ble-management
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-default-layer
+      remote: cormoran
+      revision: codex/custom-rpc-rewrite
+    - name: zmk-feature-os-detection
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-device-info
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-watchdog
+      remote: cormoran
+      revision: main
+    - name: zmk-module-devtool
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-zephyr-setting-expose
+      remote: cormoran
+      revision: main
+    - name: zmk-feature-kscan-diagnostics
+      remote: cormoran
+      revision: main

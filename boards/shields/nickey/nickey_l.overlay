@@ -10,3 +10,21 @@
             , <&xiao_d 5 GPIO_ACTIVE_HIGH>
             ;
 };
+
+/ {
+    // Existing keyboard config...
+
+    // Add a LED node here if not already defined by the board
+    leds {
+        compatible = "gpio-leds";
+        status_led: status_led {
+            gpios = <&gpio0 30 GPIO_ACTIVE_HIGH>; // Replace X and Y with your GPIO pin
+            label = "Status LED";
+        };
+    };
+    
+    status_led_device: status_led_device {
+        compatible = "zmk,status-led";
+        led = <&status_led>;
+    };
+};

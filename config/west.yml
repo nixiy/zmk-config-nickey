@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/cormoran
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: sekigon-gonnoc
+      url-base: https://github.com/sekigon-gonnoc
   projects:
     - name: zmk-west-commands
       remote: cormoran
@@ -81,4 +83,7 @@ manifest:
       revision: main
     - name: zmk-module-settings-rpc
       remote: cormoran
+      revision: main
+    - name: zmk-feature-status-led
+      remote: sekigon-gonnoc
       revision: main

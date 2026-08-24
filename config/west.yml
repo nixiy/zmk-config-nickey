@@ -8,15 +8,15 @@ manifest:
     - name: zmk-west-commands
       remote: cormoran
       import: true
-      revision: v1.0.0
+      revision: 51fa8b2462215814b1105a2c7db2c6635185aeae # v1.0.0
     - name: zmk
       remote: cormoran
       import:
         file: app/west.yml
-      revision: main+dya
+      revision: e5c9b6915b56801193e359dd9bad4a167ce0d1b8 # main+dya (2026-08-24)
     - name: zephyr
       remote: cormoran
-      revision: v4.1.0+zmk-fixes+nrf-half-duplex-uart
+      revision: 7c6b4cc486ecb41a68d9c2b1def2bb3178fbb826 # v4.1.0+zmk-fixes+nrf-half-duplex-uart (2026-08-24)
       clone-depth: 1
       import:
         name-blocklist:
@@ -39,46 +39,46 @@ manifest:
           - trusted-firmware-m
     - name: zmk-feature-custom-settings
       remote: cormoran
-      revision: main
+      revision: c6a7fef3a3be3d3ace5de9a4b0628c6418cd1f3f # main (2026-08-24)
     - name: zmk-feature-fast-keymap
       remote: cormoran
-      revision: main
+      revision: 8dac76de0ba38588ba39ca498910e24f8332bc6b # main (2026-08-24)
     - name: zmk-feature-runtime-macro
       remote: cormoran
-      revision: main
+      revision: 38530962eb7061b60efcb98e84585cfb1f0cb6de # main (2026-08-24)
     - name: zmk-feature-runtime-combo
       remote: cormoran
-      revision: main
+      revision: d9490e7b5d41c516221d131241009e81740efcee # main (2026-08-24)
     - name: zmk-feature-input-stream
       remote: cormoran
-      revision: main
+      revision: aeb015908a42a7615ccdccc7feb3a10d23132a71 # main (2026-08-24)
     - name: zmk-feature-module-physical-layout
       remote: cormoran
-      revision: main
+      revision: 4f18de45dc27820725d267916b4cdacc0e0b6cf9 # main (2026-08-24)
     - name: zmk-module-ble-management
       remote: cormoran
-      revision: main
+      revision: 57738cc4fc6ba80e82a7ac57741a0339cb186cd4 # main (2026-08-24)
     - name: zmk-feature-default-layer
       remote: cormoran
-      revision: codex/custom-rpc-rewrite
+      revision: b25cb5b324da2d9bbc84e1877c775f5b2b7c6845 # codex/custom-rpc-rewrite (2026-08-24)
     - name: zmk-feature-os-detection
       remote: cormoran
-      revision: main
+      revision: 3052679f645b8fc1997275c2eaa6b86bdd55ca01 # main (2026-08-24)
     - name: zmk-feature-device-info
       remote: cormoran
-      revision: main
+      revision: 8cedd2dd9f04e19ea5a17b94914dd47a09d8db11 # main (2026-08-24)
     - name: zmk-feature-watchdog
       remote: cormoran
-      revision: main
+      revision: 84ad14c6c3645dc40b23f45d08ab45418655f912 # main (2026-08-24)
     - name: zmk-module-devtool
       remote: cormoran
-      revision: main
+      revision: 9938a2c73c06d6e65ba2c0b68c9aa044a467eafc # main (2026-08-24)
     - name: zmk-feature-zephyr-setting-expose
       remote: cormoran
-      revision: main
+      revision: 5c89bc71122840ea46032fc241bef8665b99728a # main (2026-08-24)
     - name: zmk-feature-kscan-diagnostics
       remote: cormoran
-      revision: main
+      revision: 1432f7fe0cfe903cd7d3c9931ae6bd6f2e1f328e # main (2026-08-24)
     - name: zmk-module-settings-rpc
       remote: cormoran
-      revision: main
+      revision: 78f86df9e6c5edaf57bef3ccbd7f360cfdf49291 # main (2026-08-24)

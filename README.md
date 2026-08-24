@@ -58,9 +58,9 @@ Keymap Editor での変更を Commit（または `main` ブランチへ Push）�
 3. ページ下部の **Artifacts** から `firmware`（または `firmware.zip`）をダウンロードして解凍します。
 
 解凍すると、以下の `.uf2` ファイルが入っています。
-* `nickey_l rgbled_adapter-seeeduino_xiao_ble-zmk.uf2` （左手用）
-* `nickey_r rgbled_adapter-seeeduino_xiao_ble-zmk.uf2` （右手用）
-* `settings_reset-seeeduino_xiao_ble-zmk.uf2` （設定リセット用）
+* `nickey_l.uf2` （左手用）
+* `nickey_r.uf2` （右手用）
+* `settings_reset.uf2` （設定リセット用）
 
 > 💡 **出荷時（デフォルト）ファームウェアについて:**  
 > BOOTH等で販売している完成品には、あらかじめ本リポジトリの [/firmware](https://github.com/nixiy/zmk-config-nickey/tree/main/firmware) フォルダ内に格納されている初期ファームウェアが書き込まれています。デフォルト状態に戻したい場合は、こちらをご利用ください。
@@ -75,12 +75,12 @@ Keymap Editor での変更を Commit（または `main` ブランチへ Push）�
    - MCU上のリセットボタンを **2回素早く押す（ダブルタップ）** か、キーマップ上の `&bootloader` キーを押します。
    - PC上にストレージドライブ（`NICKEY44` または `XIAO-BOOT` 等）として認識されます。
 3. **UF2ファイルの転送:**
-   - **左手側**のマイコンには `nickey_l rgbled_adapter-seeeduino_xiao_ble-zmk.uf2` をドラッグ＆ドロップします。
-   - **右手側**のマイコンには `nickey_r rgbled_adapter-seeeduino_xiao_ble-zmk.uf2` をドラッグ＆ドロップします。
+   - **左手側**のマイコンには `nickey_l.uf2` をドラッグ＆ドロップします。
+   - **右手側**のマイコンには `nickey_r.uf2` をドラッグ＆ドロップします。
    - 転送が完了すると**ドライブが自動的にアンマウント（消失）し**、マイコンが再起動して書き込み完了となります。
 
 > 💡 **左右の接続やペアリングがおかしい場合:**  
-> 接続トラブル時は `settings_reset-seeeduino_xiao_ble-zmk.uf2` を左右両方のマイコンに一度書き込んで設定を完全にクリアしたあと、**改めて上記の手順で左右それぞれのファームウェア（`nickey_l` / `nickey_r`）を焼き直してください。**
+> 接続トラブル時は `settings_reset.uf2` を左右両方のマイコンに一度書き込んで設定を完全にクリアしたあと、**改めて上記の手順で左右それぞれのファームウェア（`nickey_l.uf2` / `nickey_r.uf2`）を焼き直してください。**
 
 ---
 

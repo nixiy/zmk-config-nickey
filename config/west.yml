@@ -2,8 +2,6 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: nixiy
-      url-base: https://github.com/nixiy
     - name: caksoylar  # <-- RGB LED
       url-base: https://github.com/caksoylar
   projects:

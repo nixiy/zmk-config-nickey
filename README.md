@@ -43,7 +43,7 @@ Web GUIツール **[Keymap Editor](https://nickcoutsos.github.io/keymap-editor/)
    - これによりGitHub上のリポジトリへ自動で反映され、GitHub Actionsによるファームウェアの自動ビルドが開始されます。
 
 > 💡 **コードを直接編集する場合:**  
-> リポジトリ内の `config/nickey44.keymap` を直接編集して Commit / Push することでも変更可能です。
+> リポジトリ内の `config/nickey.keymap` を直接編集して Commit / Push することでも変更可能です。
 
 ---
 

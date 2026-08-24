@@ -16,9 +16,9 @@ ZMK Studioを利用する場合は`v1.1.0`を使用してください。左右�
 
 各バージョンのフォルダには、次の3ファイルがあります。
 
-- `nickey_l rgbled_adapter-seeeduino_xiao_ble-zmk.uf2`: 左手側用
-- `nickey_r rgbled_adapter-seeeduino_xiao_ble-zmk.uf2`: 右手側用
-- `settings_reset-seeeduino_xiao_ble-zmk.uf2`: 設定リセット用
+- `nickey_l.uf2`: 左手側用
+- `nickey_r.uf2`: 右手側用
+- `settings_reset.uf2`: 設定リセット用
 
 通常の更新では、左手側用と右手側用をそれぞれ対応する側へ書き込みます。接続やペアリングに問題がある場合のみ、両側へ設定リセット用ファームウェアを書き込んでから、改めて左右のファームウェアを書き込んでください。
 

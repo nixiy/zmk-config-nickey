@@ -7,7 +7,7 @@
 ## 🛒 販売 & 関連記事
 
 * 🛍️ **BOOTH (購入ページ):** [Nickey44 - BOOTH](https://booth.pm/ja/items/8178906)
-* 🛠️ **ビルドガイド:** [Nickey44 ビルドガイド](https://nixdesire.com/nickey-buildguide-2/)
+* 🛠️ **ビルドガイド:** [Nickey44 ビルドガイド](https://nixiy.github.io/nickey-docs/nickey44/)
 * 📝 **開発記 (なぜ44キーなのか):** [「Nickey44」を設計した理由。理想の44キーと40%レイアウトの最適解を求めた開発記](https://nixdesire.com/nickey44-review/)
 * 📖 **紹介記事 (詳細解説):** [デスクの上を、最も美しく。パームレスト不要の極薄設計と完全ワイヤレスが融合した分割40%自作キーボード『Nickey44』](https://nixdesire.com/nickey44-introduction/)
 

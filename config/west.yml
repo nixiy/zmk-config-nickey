@@ -87,4 +87,4 @@ manifest:
     - name: zmk-rgbled-widget
       remote: caksoylar
       # v0.3 support was split out to v0.3-branch; main now tracks ZMK main/Zephyr 4.x
-      revision: main
+      revision: e6b467792a1dabef8cfa5c9fd26bfefc9c16662b # main (2026-08-28)

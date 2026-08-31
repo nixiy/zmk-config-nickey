@@ -3,6 +3,6 @@ id: nickey
 name: nickey
 type: shield
 url: https://github.com/nixiy/zmk-config-nickey
-requires: [seeeduino_xiao_ble]
+requires: [seeed_xiao]
 features:
   - keys

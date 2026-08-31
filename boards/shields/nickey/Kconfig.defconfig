@@ -19,10 +19,4 @@ config NFCT_PINS_AS_GPIOS
 config ZMK_SPLIT
     default y
 
-config RGBLED_WIDGET_BATTERY_LEVEL_HIGH
-    default 30
-
-config RGBLED_WIDGET_BATTERY_LEVEL_CRITICAL
-    default 10
-
 endif
